@@ -3,6 +3,13 @@ button.addEventListener("mouseover", getmenu);
 
 const hiddencontent = document.querySelector(".hidden");
 
-function getmenu() {
-    hiddencontent.classList.toggle('visible')
+function getmenu(i) {
+    if (i = getmenu){
+        hiddencontent.classList.toggle('visible')
+    }
+    else{
+        
+    }
+
+    
 }

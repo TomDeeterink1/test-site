@@ -11,6 +11,7 @@ body{
     display: flex;
     flex-direction: row;
     background-color: #0e0b14;
+    z-index: 9999;
 }
 /* Header: nav flex*/
 .header nav{
@@ -39,7 +40,7 @@ body{
     text-decoration: none;
     
 }
-.header a{
+.header nav > ul  a{
     font-size: 1em;
     font-weight: 500;
     text-decoration: none;
@@ -61,23 +62,50 @@ body{
 .header  button{
     position: absolute;
     right: 40px;
-    width: 3.5em;
-    height: 3.5em;
+    width: 4em;
+    height: 4em;
     border-radius: 100%;
     border: none;
-    background-color: white;
     z-index: 99;
+    background-color: #0e0b14;
+}
+.header button> img{
+    width: 4em;
+    height: 4em;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-radius: 100%;
+
 }
 /* Header button before text */
 .header button::before{
     content: "Tom Deeterink";
     color: white;
     position: absolute;
-    margin-left: -100px;
+    margin-left: -120px;
     margin-top: -8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70px;
 }
 .header button:hover{
     cursor: pointer;
+}
+.container{
+    position: absolute;
+    right: 2px;
+    background-color: #0e0b14;
+    display: flex;
+    height: 70px;
+    width: 220px;
+    top: 1px;
+    position: absolute;
+    background-color: #0e0b14;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
 }
 
 /* hover  menu for users */
@@ -86,17 +114,37 @@ body{
 /* when button is NOT clicked, menu is NOT visible */
 .hidden{
     visibility: hidden;
-    width: 14em;
-    height: 30em;
+    width: 12.5em;
+    height: max-content;
+    z-index: 0;
     position: absolute;
     background-color: #0e0b14;
     right: 0px;
-    padding: 2em;
+    padding: 1em;
+    margin-top: -620px;
     top: 0;
+    border-radius: 0px 12px 12px 0px;
+    transition: ease-out 0.5s;
+    overflow: hidden;
 }
+
 /* when button is clicked, menu is visible */
 .visible{
-    visibility: visible;
+   visibility: visible;
+   height: max-content;
+   z-index: 1 !important;
+   margin-top: 0px;
+   transition: ease-in 0.5s;
+   border: 1px solid #17151b;
+}
+/* devider between profile and other users */
+.devider{
+    border-bottom: 1px solid #17151b;
+    position: absolute;
+    top: 6em;
+    width: 75%;
+    margin-top: -1em;
+    
 }
 .hidden ul{
     display: flex;
@@ -104,15 +152,55 @@ body{
     align-items: flex-start;
     color: white;
     padding-inline-start: 0px;
+    margin-top: 4em;
+    overflow: visible ;
 }
 
 .hidden li{
     margin-left: 0;
 }
 
+.header article > .hidden{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 12px 0px 0px 12px;
+}
 /* users profile card */
-
 .users li{
     padding: 16px 0em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 170px ;
+    font-weight: 400;
+    transform: scale(100%);
+    transition: ease-out 0.3s;
 
+}
+.users li>img{
+        position: relative;
+        width: 3.5em;
+        height: 3.5em;
+        border-radius: 100%;
+        margin-right: 10px;
+        margin-bottom: -14px;
+}
+.users li:hover{
+    transform: scale(110%);
+    transition: ease-in 0.2s;
+    cursor: pointer;
+}
+
+/* different user hover (link), makes it light up */
+.users li a{
+    color: rgb(208, 204, 204);
+    transition: ease-out 0.3s;
+    text-decoration: none;
+    font-size: 1em !important;
+}
+.users li> a:hover{
+    color: white;
+    transition: ease-in 0.2s;
+    text-decoration: none;
 }
