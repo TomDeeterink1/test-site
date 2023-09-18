@@ -134,7 +134,7 @@ body{
    height: max-content;
    z-index: 1 !important;
    margin-top: 0px;
-   transition: ease-in 0.5s;
+   transition: ease-in 0.2s;
    border: 1px solid #17151b;
 }
 /* devider between profile and other users */
