@@ -1,1 +1,109 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
 
+
+/* Header: basic styling for header*/
+.header{
+    padding: 0px 40px;
+    display: flex;
+    flex-direction: row;
+    background-color: #0e0b14;
+}
+/* Header: nav flex*/
+.header nav{
+    display: flex;
+}
+/* Header logo */
+.header h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+/* Header: ul flex, and styling*/
+.header ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    
+}
+/* menu styling  a selector is for menu items self*/
+.header li{
+    margin-left: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    
+}
+.header a{
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 0.1em;
+}
+    /* hover a element */
+    .header a:hover{
+        text-decoration: underline 2px white;
+        text-underline-offset: 0.4em;
+        transition: step-end;
+    }
+/* profile button */
+.header article{
+    display: flex;
+    align-items: center;
+}
+.header  button{
+    position: absolute;
+    right: 40px;
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 100%;
+    border: none;
+    background-color: white;
+    z-index: 99;
+}
+/* Header button before text */
+.header button::before{
+    content: "Tom Deeterink";
+    color: white;
+    position: absolute;
+    margin-left: -100px;
+    margin-top: -8px;
+}
+.header button:hover{
+    cursor: pointer;
+}
+
+/* hover  menu for users */
+
+
+/* when button is NOT clicked, menu is NOT visible */
+.hidden{
+    visibility: hidden;
+    width: fit-content;
+    height: 30em;
+    position: absolute;
+    background-color: #0e0b14;
+    right: 50px;
+    padding: 2em;
+    top: 0;
+}
+/* when button is clicked, menu is visible */
+.visible{
+    visibility: visible;
+}
+.hidden ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+}
+
+.hidden li{
+    margin-left: 0;
+}
