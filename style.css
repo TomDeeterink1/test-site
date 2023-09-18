@@ -56,6 +56,7 @@ body{
 .header article{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .header  button{
     position: absolute;
@@ -85,7 +86,7 @@ body{
 /* when button is NOT clicked, menu is NOT visible */
 .hidden{
     visibility: hidden;
-    width: fit-content;
+    width: 14em;
     height: 30em;
     position: absolute;
     background-color: #0e0b14;
@@ -102,8 +103,17 @@ body{
     flex-direction: column;
     align-items: flex-start;
     color: white;
+    padding-inline-start: 0px;
 }
 
 .hidden li{
     margin-left: 0;
+}
+
+/* users profile card */
+
+.users li{
+    padding: 16px 0em;
+    background-color: red;
+    color: blue;
 }
