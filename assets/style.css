@@ -23,6 +23,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.8em;
     font-weight: 700;
+    z-index: 3;
 }
 /* Header: ul flex, and styling*/
 .header ul{
@@ -90,6 +91,7 @@ body{
     text-overflow: ellipsis;
     max-width: 70px;
 }
+
 .header button:hover{
     cursor: pointer;
 }
@@ -203,4 +205,69 @@ body{
     color: white;
     transition: ease-in 0.2s;
     text-decoration: none;
+}
+.header .mobile{
+    display: none;
+}
+
+/* Header nav mobile */
+@media screen and (max-width: 420px){
+    .header{
+        padding: 0px 16px;
+    }
+    .header button{
+        right: 16px;
+    }
+    .header button::before{
+        display: none;
+    }
+    .header  .mobile{
+        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 3;
+    }
+    .mobile li{
+        margin-inline-start: 1em;
+    }
+    .mobile ul{
+        padding-inline-start: 0px;
+    }
+    .header nav{
+        display: none;
+    }
+    .header .container{
+
+    }
+}
+/* User nav mobile  */
+
+@media screen and (max-width: 420px){
+        /* when button is NOT clicked, menu is NOT visible */
+    .hidden{
+        visibility: hidden;
+        width: 12em;
+        height: max-content;
+        z-index: 0;
+        position: absolute;
+        background-color: #0e0b14;
+        right: 0px;
+        padding: 1em;
+        margin-top: -620px;
+        top: 0;
+        border-radius: 0px 12px 12px 0px;
+        transition: ease-out 0.5s;
+        overflow: hidden;
+    }
+
+    /* when button is clicked, menu is visible */
+    .visible{
+    visibility: visible;
+    height: max-content;
+    z-index: 1 !important;
+    margin-top: 0px;
+    transition: ease-in 0.2s;
+    border: 1px solid #17151b;
+    }
 }

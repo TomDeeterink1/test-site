@@ -1,5 +1,5 @@
 const button = document.querySelector(".profile-button");
-button.addEventListener("mouseover", getmenu);
+button.addEventListener("click", getmenu);
 
 const hiddencontent = document.querySelector(".hidden");
 
